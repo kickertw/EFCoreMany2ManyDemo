@@ -1,6 +1,6 @@
 # EF Core 5.0 (Many-to-Many)
 
-Simple windows console app to show some of the ways you can use EF Core 5.0 to setup many-to-many relationships.
+Simple windows console app to show some of the ways you can use EF Core 5.0 to setup many-to-many relationships. While I believe you can do the same thing with sqllite or an in memory db, I'm using SQL Server as that's what I work with the most.
 
 ## Branches
 
