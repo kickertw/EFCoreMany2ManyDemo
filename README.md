@@ -2,6 +2,9 @@
 
 Simple windows console app to show some of the ways you can use EF Core 5.0 to setup many-to-many relationships. While I believe you can do the same thing with sqllite or an in memory db, I'm using SQL Server as that's what I work with the most.
 
+## Requirements
+ 1. Local SQL Server running with a DB named "EFDemoDB". You can always change the connection string and name the DB whatever you want.
+
 ## Branches
 
  1. **minimal** - The simplest setup. A code first approach.
