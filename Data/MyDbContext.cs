@@ -24,6 +24,15 @@ namespace EFCoreMany2ManyDemoConsole.Data
                     "StudentCourse",
                     i => i.HasOne<Course>().WithMany(),
                     i => i.HasOne<Student>().WithMany());
+
+            //Specify Column Names
+            //modelBuilder.Entity<Student>()
+            //    .HasMany(i => i.Courses)
+            //    .WithMany(i => i.Students)
+            //    .UsingEntity<Dictionary<string, object>>(
+            //        "StudentCourse",
+            //        i => i.HasOne<Course>().WithMany().HasForeignKey("CourseId"),
+            //        i => i.HasOne<Student>().WithMany().HasForeignKey("StudentId"));
         }
     }
 }
