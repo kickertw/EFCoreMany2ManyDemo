@@ -11,6 +11,8 @@ namespace EFCoreMany2ManyDemoConsole.Data.Entities
         [Key]
         public int CourseId { get; set; }
         public string Title { get; set; }
+
         public ICollection<Student> Students { get; set; }
+        public ICollection<StudentCourse> StudentCourses { get; set; }
     }
 }
