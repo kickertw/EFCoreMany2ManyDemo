@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace EFCoreMany2ManyDemoConsole.Data
 {
@@ -14,8 +15,15 @@ namespace EFCoreMany2ManyDemoConsole.Data
             => options.UseSqlServer("Server=.;Database=EFDemoDB;Trusted_Connection=True;Integrated Security=true;MultipleActiveResultSets=true");
 
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>()
+                .HasMany(i => i.Courses)
+                .WithMany(i => i.Students)
+                .UsingEntity<Dictionary<string, object>>(
+                    "StudentCourse",
+                    i => i.HasOne<Course>().WithMany(),
+                    i => i.HasOne<Student>().WithMany());
+        }
     }
 }
